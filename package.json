@@ -1,0 +1,30 @@
+{
+  "name": "com.av.eases",
+  "version": "1.0.0",
+  "displayName": "AV Eases",
+  "description": "Comprehensive easing function library for animations with curve support and configurable interpolation.",
+  "unity": "2021.3",
+  "author": {
+    "name": "IAFahim",
+    "email": "iafahim.dev@gmail.com",
+    "url": "https://github.com/IAFahim"
+  },
+  "keywords": [
+    "easing",
+    "animation",
+    "tween",
+    "interpolation",
+    "math"
+  ],
+  "license": "MIT",
+  "category": "Gameplay",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.6"
+  },
+  "samples": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IAFahim/AV.Eases"
+  },
+  "licensesUrl": "https://github.com/IAFahim/AV.Eases/blob/main/LICENSE.md"
+}
