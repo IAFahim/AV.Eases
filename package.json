@@ -1,0 +1,27 @@
+{
+  "name": "com.av.eases",
+  "version": "1.0.0",
+  "displayName": "AV.Eases",
+  "description": "Comprehensive easing function library for Unity with enum-based selection and ScriptableObject configuration",
+  "unity": "2022.3",
+  "author": {
+    "name": "IAFahim",
+    "email": "iafahim.dev@gmail.com",
+    "url": "https://github.com/IAFahim"
+  },
+  "keywords": [
+    "easing",
+    "animation",
+    "tween",
+    "smooth",
+    "interpolation",
+    "motion",
+    "curve"
+  ],
+  "license": "MIT",
+  "category": "Gameplay",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.6"
+  },
+  "samples": []
+}
