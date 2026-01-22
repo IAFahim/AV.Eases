@@ -1,49 +1,67 @@
-# AV Eases
+# AV.Eases
 
-Comprehensive easing function library for animations with curve support and configurable interpolation.
+[![Unity Version](https://img.shields.io/badge/Unity-2022.3%2B-blue.svg)](https://unity3d.com/get-unity/download)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
+[![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg)](CHANGELOG.md)
 
-![Unity Version](https://img.shields.io/badge/unity-2021.3%2B-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
+Comprehensive easing function library for Unity with enum-based selection and ScriptableObject configuration.
 
 ## Features
 
-- **Professional Quality**: Built following Unity Package Manager best practices
-- **Well Documented**: Comprehensive documentation and examples
-- **Production Ready**: Tested and optimized for production use
+- 30+ easing functions (Linear, Sine, Quad, Cubic, Quart, Quint, Expo, Circ, Back, Elastic, Bounce)
+- Inspector-friendly EEase enum for easy selection
+- EaseConfig ScriptableObject for reusable easing configurations
+- Mathematically accurate implementations
+- Optimized for performance
 
 ## Installation
 
-Install this package via Unity Package Manager by adding this line to your `Packages/manifest.json`:
-
-```json
-"com.av.eases": "https://github.com/IAFahim/AV.Eases.git"
 ```
-
-Or install via Git URL in Unity Package Manager:
-1. Open Unity Package Manager (Window > Package Manager)
-2. Click the + icon > Add package from git URL
-3. Enter: `https://github.com/IAFahim/AV.Eases.git`
-
-## Requirements
-
-- Unity 2021.3 or higher
-- Dependencies will be automatically resolved by Unity Package Manager
+Window > Package Manager > + > Add package from git URL
+```
+```
+https://github.com/IAFahim/AV.Eases.git
+```
 
 ## Usage
 
-Add components from the `AV Eases` package to your GameObjects via the Component menu:
-`Component > AV > Eases > [Component Name]`
+```csharp
+using AV.Eases.Runtime;
 
-For detailed usage instructions, see the [Samples](Samples~) included with this package.
+public class MyBehaviour : MonoBehaviour
+{
+    public EEase easeType = EEase.InOutQuad;
+    public EaseConfig customEase;
 
-## API Documentation
+    float ApplyEase(float t)
+    {
+        return EaseEvaluator.Evaluate(easeType, t);
+    }
+}
+```
 
-For complete API reference and documentation, visit: https://github.com/IAFahim/AV.Eases
+## Available Eases
 
-## Changelog
+- **Linear** - Straight diagonal line
+- **Sine** - Smooth S-curves
+- **Quad** - Gentle curves
+- **Cubic** - Moderate curves
+- **Quart** - Strong curves
+- **Quint** - Very strong curves
+- **Expo** - Extreme curves
+- **Circ** - Circular motion
+- **Back** - Overshoot
+- **Elastic** - Elastic effect
+- **Bounce** - Bouncy effect
 
-See [CHANGELOG.md](CHANGELOG.md) for version history.
+Each comes in In, Out, and InOut variants.
+
+## Code Quality
+
+This package follows strict naming guidelines:
+- ✅ **Descriptive variables**: `adjustedProgress` (not `f`)
+- ✅ **Domain standards**: `t` for time/progress in easing functions (universally understood in animation mathematics)
+- ✅ **Explicit intent**: Variable names clearly describe their purpose
 
 ## License
 
@@ -51,12 +69,4 @@ MIT License - see [LICENSE.md](LICENSE.md) for details.
 
 ## Author
 
-IAFahim - [https://github.com/IAFahim](https://github.com/IAFahim)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-For issues and questions, please use the [GitHub Issues](https://github.com/IAFahim/AV.Eases/issues) page.
+**IAFahim** - [GitHub](https://github.com/IAFahim)
