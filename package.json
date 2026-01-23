@@ -1,7 +1,7 @@
 {
   "name": "com.av.eases",
   "version": "1.0.0",
-  "displayName": "AV.Eases",
+  "displayName": "AV Eases",
   "description": "Comprehensive easing function library for Unity with enum-based selection and ScriptableObject configuration",
   "unity": "2022.3",
   "author": {
@@ -23,5 +23,9 @@
   "dependencies": {
     "com.unity.mathematics": "1.2.6"
   },
-  "samples": []
+  "samples": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IAFahim/AV.Eases"
+  }
 }

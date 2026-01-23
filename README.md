@@ -1,72 +1,49 @@
 # AV.Eases
 
-[![Unity Version](https://img.shields.io/badge/Unity-2022.3%2B-blue.svg)](https://unity3d.com/get-unity/download)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg)](CHANGELOG.md)
+![Header](documentation_header.svg)
 
-Comprehensive easing function library for Unity with enum-based selection and ScriptableObject configuration.
+[![Unity](https://img.shields.io/badge/Unity-2022.3%2B-000000.svg?style=flat-square&logo=unity)](https://unity.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE.md)
 
-## Features
+Comprehensive, Burst-compatible easing library for Unity.
 
-- 30+ easing functions (Linear, Sine, Quad, Cubic, Quart, Quint, Expo, Circ, Back, Elastic, Bounce)
-- Inspector-friendly EEase enum for easy selection
-- EaseConfig ScriptableObject for reusable easing configurations
-- Mathematically accurate implementations
-- Optimized for performance
+## ✨ Features
 
-## Installation
+- **Burst Compatible**: `EaseConfig` struct is designed for high-performance Burst jobs.
+- **Extensive Library**: 30+ easing functions (Sine, Quad, Cubic, Elastic, Bounce, etc.).
+- **Optimized Struct**: Packs ease type, wrap mode, and flags into a single byte.
+- **Direct Math**: Access to raw math functions via static methods.
 
-```
-Window > Package Manager > + > Add package from git URL
-```
-```
-https://github.com/IAFahim/AV.Eases.git
-```
+## 📦 Installation
 
-## Usage
+Install via Unity Package Manager (git URL).
 
+### Dependencies
+- **Unity.Mathematics**
+
+## 🚀 Usage
+
+### 1. Burst Job Usage
 ```csharp
-using AV.Eases.Runtime;
-
-public class MyBehaviour : MonoBehaviour
+[BurstCompile]
+public struct MoveJob : IJob
 {
-    public EEase easeType = EEase.InOutQuad;
-    public EaseConfig customEase;
-
-    float ApplyEase(float t)
+    public EaseConfig Ease;
+    public float Time;
+    
+    public void Execute()
     {
-        return EaseEvaluator.Evaluate(easeType, t);
+        Ease.Evaluate(Time, out float result);
     }
 }
 ```
 
-## Available Eases
+### 2. Standard Usage
+```csharp
+float val = EaseConfig.OutBounce(0.5f);
+```
 
-- **Linear** - Straight diagonal line
-- **Sine** - Smooth S-curves
-- **Quad** - Gentle curves
-- **Cubic** - Moderate curves
-- **Quart** - Strong curves
-- **Quint** - Very strong curves
-- **Expo** - Extreme curves
-- **Circ** - Circular motion
-- **Back** - Overshoot
-- **Elastic** - Elastic effect
-- **Bounce** - Bouncy effect
+## ⚠️ Status
 
-Each comes in In, Out, and InOut variants.
-
-## Code Quality
-
-This package follows strict naming guidelines:
-- ✅ **Descriptive variables**: `adjustedProgress` (not `f`)
-- ✅ **Domain standards**: `t` for time/progress in easing functions (universally understood in animation mathematics)
-- ✅ **Explicit intent**: Variable names clearly describe their purpose
-
-## License
-
-MIT License - see [LICENSE.md](LICENSE.md) for details.
-
-## Author
-
-**IAFahim** - [GitHub](https://github.com/IAFahim)
+- 🧪 **Tests**: Missing.
+- 📘 **Samples**: None.
