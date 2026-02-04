@@ -1,7 +1,9 @@
+using System;
 using System.Runtime.CompilerServices;
 using Unity.Burst;
 using Unity.Mathematics;
 using Unity.Properties;
+
 
 namespace AV.Eases.Runtime
 {
@@ -11,6 +13,7 @@ namespace AV.Eases.Runtime
     ///     Layout: [R|WW|EEEEE] (Bit 7: Reversed | Bits 6-5: WrapMode | Bits 4-0: EaseType)
     /// </summary>
     [BurstCompile]
+    [Serializable]
     public struct EaseConfig
     {
         /// <summary>
